@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+
+
+    <title>Encriptador de Texto</title>
+
+</head>
+<body>
+
+    <header class="header">
+        <img src="img/logo.svg" alt="Logo Alura">
+        <div class="headerTitle">            
+            <h1>Encriptador de texto</h1>
+        </div>        
+    </header>
+    
+    <div class="mainContainer">
+        <div class="mainTextContainer">
+            <textarea autofocus name="messageInput" id="messageInput" cols="60" rows="15" maxlength="250" placeholder="Digita tu mensaje aqui..." required></textarea>
+
+            <div class="main-infocontainer">
+                <img src="img/exclamacion.svg" alt="Simbolo de exclamacion" class="imagen-exclamacion">
+                <p class="mensaje-pequeno"> Solo letras minúsculas y sin acentos</p>
+            </div>            
+
+            <div class="mainButtonsContainer">
+                <button id="boton-encriptar" onclick="cifrarmensaje()"> Encriptar</button>
+                <button id="boton-desencriptar" onclick="descifrarmensaje()"> Desencriptar</button>
+            </div>   
+        </div>      
+
+        
+        <div class="mainCodedMessagesContainer" id="mainCodedMessagesContainer">
+            <img src="img/muneco.svg" alt="Persona" id="muneco" class="muneco">
+
+            <p class="codedMessages-title" id="codedMessages-title">Ningun mensaje encontrado</p>
+
+            <p class="codedMessage" id="codedMessage">Ingresa el texto que deseas encriptar o desencriptar</p>
+
+            <textarea name="codedMessageTextBox" id="codedMessageTextBox" cols="40" rows="8" readonly></textarea>
+
+            <button id="boton-copiar" onclick="copiarTexto()">Copiar</button>
+
+        </div>        
+    </div>
+
+    <footer class="footer">
+        <p>TheDavixZ80 - 2023</p>
+    </footer>
+
+    
+    <script type="text/javascript" src="js.js"></script>
+</body>
+</html>

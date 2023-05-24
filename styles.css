@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex; 
+    background-color: rgb(44, 106, 183);
+    color: #fff;
+    gap: 1%;
+    padding: 10px 10px;
+    
+}
+
+.mainContainer {    /*MAIN */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 35em;
+
+    justify-content: space-around;
+    margin: 20px;
+        
+}
+
+.mainTextContainer{   /*IZQUIERDO*/
+    display: grid;
+    flex-grow: 1;
+    width: 70%;
+    height: 100%;    
+}
+
+#messageInput{  /*EL INPUT*/
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(146, 220, 254);
+
+    margin: 4% 2% 4%;        
+    width: 92%;
+    padding: 10px;
+    
+    border-radius: 15px;
+    border: 2px solid #d4f2f3;
+
+    resize: none; /*Desabilita el agrandado*/    
+}
+
+.main-infocontainer {
+    display: flex;
+    align-items: stretch;
+    font-size: 12px;
+    gap: 1%;
+    margin-top: -2em;
+}
+
+/*BOTONES*/
+.mainButtonsContainer { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;    
+    gap: 5%;
+    align-self: flex-end;
+    
+    
+    height: 60px;
+    margin: 10px;
+}
+
+#boton-encriptar{
+    background-color: rgb(7, 67, 126);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+
+    width: 30%;
+    height: 100%;    
+    border-radius: 15px;
+    
+}
+
+#boton-encriptar:hover, #boton-desencriptar:hover, #boton-copiar:hover {
+    background-color: #3b6695;
+    transform: scale(1.05);
+    transition: 0.5s;   
+}
+
+#boton-desencriptar{
+    background-color: rgb(126, 165, 203);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+
+    width: 30%;
+    height: 100%;    
+    border-radius: 15px;
+}
+
+#boton-copiar{
+    display: none;
+    background-color: rgb(126, 165, 203);
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+
+    width: 50%;
+    height: 10%;    
+    border-radius: 15px;
+
+    margin: 20px;
+}
+
+
+/*ASIDE*/
+.mainCodedMessagesContainer {
+    display: flex;
+    background-color: cornsilk;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;  
+    border-radius: 25px;
+        
+}
+
+.muneco {
+    width: 60%;
+    height: auto;
+    padding: 10px 5px;
+}
+
+.codedMessages-title {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.codedMessage {
+    font-size: 18px;
+    text-align: center;
+    text-justify: distribute;    
+}
+
+#codedMessageTextBox {
+    display: none;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 92%;
+    height: 90%;
+    margin: 5%;    
+
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    
+    resize: none; /*Desabilita el agrandado*/
+    
+}
+
+.footer{
+    display: inline-block;
+    background-color: rgb(44, 106, 183);
+    color: #fff;    
+    font-style: italic;
+    text-align: center;  
+    width: 100%;
+    position: fixed; left: 0; bottom: 0; 
+    z-index: -100;    
+}
+
+@media screen and (max-width: 600px) {
+     
+    
+    .mainContainer {
+        position: relative;   
+        display: flex;
+        flex-direction: column;    
+        margin: 5%; 
+    }
+
+    .mainTextContainer{
+        display: grid;
+        flex-grow: 0;        
+        width: 100%;
+        height: 40%;        
+    }
+
+    #messageInput {
+        margin: 1%;
+    }
+
+    .main-infocontainer{
+        position: relative;
+        height: 80%;
+        margin: 0;
+        font-size: 10px;
+        padding: -80px;
+    }
+
+    .imagen-exclamacion{
+        width: 15px;
+        height: 15px;
+    }
+
+    .mainButtonsContainer {
+        align-items: center;
+        align-self: center;
+        height: 95%;
+        margin: 0%;
+        
+    }
+
+    #boton-desencriptar, #boton-encriptar {        
+        font-size: 14px;
+        height: 95%;
+        width: 75%;
+    }
+
+    .mainCodedMessagesContainer {
+        display: flex;        
+        position: relative ;
+        width: 100%;
+        height: 15em;        
+    }
+
+    .muneco {
+        width: 30%;
+    }
+
+    #messageInput {
+        font-size: 16px;
+        height: 8em;
+    }
+
+    .footer{
+        position: fixed;
+        margin-top: auto;
+    }
+
+    
+
+}
