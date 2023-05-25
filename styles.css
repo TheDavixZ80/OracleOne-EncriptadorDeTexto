@@ -1,41 +1,43 @@
 body {
+    height: 100%;
     margin: 0;
+    font-family: Georgia, serif;
 }
 
 header {
     display: flex; 
+    height: auto;    
     background-color: rgb(44, 106, 183);
     color: #fff;
     gap: 1%;
-    padding: 10px 10px;
-    
+    padding: 5px 10px;       
 }
 
 .mainContainer {    /*MAIN */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 35em;
+    height: 100vh;
 
     justify-content: space-around;
-    margin: 20px;
-        
+    margin: 20px;        
 }
 
 .mainTextContainer{   /*IZQUIERDO*/
-    display: grid;
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;    
     width: 70%;
-    height: 100%;    
+    height: 75%;    
 }
 
 #messageInput{  /*EL INPUT*/
-    font-size: 30px;
+    width: 92%;
+    height: 75%;
+    font-size: 2.5em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: rgb(146, 220, 254);
 
-    margin: 4% 2% 4%;        
-    width: 92%;
+    margin: 1rem 1rem;      
     padding: 10px;
     
     border-radius: 15px;
@@ -47,23 +49,22 @@ header {
 .main-infocontainer {
     display: flex;
     align-items: stretch;
-    font-size: 12px;
+    font-size: 1em;
     gap: 1%;
     margin-top: -2em;
+    padding: 1em 2.5em;
 }
 
 /*BOTONES*/
 .mainButtonsContainer { 
-    display: flex;
+    display: flex;    
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
     flex-wrap: nowrap;    
-    gap: 5%;
-    align-self: flex-end;
-    
-    
-    height: 60px;
+
+    height: 3.5em;
+    gap: 5%;   
     margin: 10px;
 }
 
@@ -119,9 +120,9 @@ header {
     justify-content: center;
     align-items: center;
 
-    width: 30%;  
-    border-radius: 25px;
-        
+    width: 30%; 
+    height: 75%; 
+    border-radius: 25px;        
 }
 
 .muneco {
@@ -132,19 +133,19 @@ header {
 
 .codedMessages-title {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.5em;
     text-align: center;
 }
 
 .codedMessage {
-    font-size: 18px;
+    font-size: 1.5em;
     text-align: center;
     text-justify: distribute;    
 }
 
 #codedMessageTextBox {
     display: none;
-    font-size: 30px;
+    font-size: 2.5em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 92%;
     height: 90%;
@@ -158,31 +159,50 @@ header {
 }
 
 .footer{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(44, 106, 183);
     color: #fff;    
-    font-style: italic;
-    text-align: center;  
-    width: 100%;
-    position: fixed; left: 0; bottom: 0; 
-    z-index: -100;    
+    font-style: italic;         
+    /*width: 100%;    
+    left: 0; bottom: 0; 
+    z-index: -100; */
 }
 
-@media screen and (max-width: 600px) {
-     
+.footer-text {
+    color: #fff;
+    margin: 10px 0px 0px;
+}
+
+.social-media-icons {
+    display: flex;
+    margin: 10px 0px 0px;  
+}
+
+.media-ico {
+    width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 600px) {    
     
     .mainContainer {
-        position: relative;   
-        display: flex;
-        flex-direction: column;    
+        display: flex;   
+        align-content: center;         
         margin: 5%; 
+        gap: 1em;
     }
 
     .mainTextContainer{
-        display: grid;
+        display: flex;
         flex-grow: 0;        
         width: 100%;
-        height: 40%;        
+        height: 55%;        
     }
 
     #messageInput {
@@ -191,28 +211,25 @@ header {
 
     .main-infocontainer{
         position: relative;
-        height: 80%;
-        margin: 0;
-        font-size: 10px;
-        padding: -80px;
+        height: 10%;        
+        font-size: 0.9em;        
     }
 
     .imagen-exclamacion{
-        width: 15px;
-        height: 15px;
+        width: 5%;
     }
 
     .mainButtonsContainer {
         align-items: center;
         align-self: center;
-        height: 95%;
+        height: 20%;
         margin: 0%;
         
     }
 
-    #boton-desencriptar, #boton-encriptar {        
-        font-size: 14px;
-        height: 95%;
+    #boton-desencriptar, #boton-encriptar, #boton-copiar {        
+        font-size: 1.5em;
+        height: 2em;
         width: 75%;
     }
 
@@ -220,23 +237,21 @@ header {
         display: flex;        
         position: relative ;
         width: 100%;
-        height: 15em;        
+        height: 40%;  
+        font-size: 0.75em;      
     }
 
     .muneco {
         width: 30%;
     }
 
-    #messageInput {
-        font-size: 16px;
-        height: 8em;
+    #messageInput, #codedMessageTextBox {
+        font-size: 1.4em;        
     }
 
     .footer{
-        position: fixed;
+        position : relative;
         margin-top: auto;
-    }
-
-    
+    }    
 
 }
