@@ -1,90 +1,86 @@
-/*
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
-*/
-
-/*
-"gato" => "gaitober"
-gaitober" => "gato"
-*/
-
-/*
-Boton tuerca para cambiar la key de las vocales para destacar
+/*const botonEncriptar = document.getElementById("boton-encriptar");
+botonEncriptar.addEventListener("click", verificarMensaje);
+const botonDesencriptar = document.getElementById("boton-desencriptar");
+botonDesencriptar.addEventListener("click", verificarMensaje);
 */
 
 function cifrarmensaje() {
-    const mensaje = document.getElementById('messageInput').value; //STRING
-    console.log(mensaje);
+    const mensaje = document.getElementById('messageInput').value; //STRING    
+     
 
-    var mensajeHechoArray = Array.from(mensaje);
-    var mensajeHechoArray_length = mensajeHechoArray.length;
-    console.log(mensajeHechoArray_length);
+    if (verificarMensaje(mensaje) === true) {        
 
-    var mensajeCodificado = []; 
+        document.querySelector(".mensaje-pequeno").style.color = 'red'; 
 
-    for (let i = 0; i < mensajeHechoArray_length+1; i++) {
+    } else {   
+        document.querySelector(".mensaje-pequeno").style.color = 'black';       
+        var mensajeHechoArray = Array.from(mensaje);
+        var mensajeHechoArray_length = mensajeHechoArray.length; 
+        var mensajeCodificado = []; 
 
-        var letraPorLetra = mensajeHechoArray[i];        
-        
-        console.log(letraPorLetra);
+        for (let i = 0; i < mensajeHechoArray_length+1; i++) {
 
-        switch (letraPorLetra) {
-            case 'a':
-                mensajeCodificado.push('a','i')
-                break;
-            case 'e':
-                mensajeCodificado.push('e','n','t','e','r' );
-                break;
-            case 'i':
-                mensajeCodificado.push('i','m','e','s');
-                break;
-            case 'o':
-                mensajeCodificado.push('o','b','e','r');
-                break;
-            case 'u':
-                mensajeCodificado.push('u','f','a','t');
-                break;
-            default:
-                console.log("default!");                
-                mensajeCodificado.push(letraPorLetra);
-        }
-    }  
+            var letraPorLetra = mensajeHechoArray[i]; 
 
-    formatoMensaje()
-    mostrarTextAreaCodificado(mensajeCodificado.join(""));
-    
+            switch (letraPorLetra) {
+                case 'a':
+                    mensajeCodificado.push('a','i')
+                    break;
+                case 'e':
+                    mensajeCodificado.push('e','n','t','e','r' );
+                    break;
+                case 'i':
+                    mensajeCodificado.push('i','m','e','s');
+                    break;
+                case 'o':
+                    mensajeCodificado.push('o','b','e','r');
+                    break;
+                case 'u':
+                    mensajeCodificado.push('u','f','a','t');
+                    break;
+                default:                                    
+                    mensajeCodificado.push(letraPorLetra);
+            }
+        }  
+        formatoMensaje()
+        mostrarTextAreaCodificado(mensajeCodificado.join(""));    
+    }    
 }
 
 function descifrarmensaje() {
     const mensaje = document.getElementById('messageInput').value; //STRING
-  
-    var micondicional = true;
-    var mensajeDescodificado = mensaje;
 
-    do {
-        if (mensajeDescodificado.includes('ai') == true){
-            mensajeDescodificado = mensajeDescodificado.replace('ai', 'a');                     
-        } else if (mensajeDescodificado.includes('enter') == true){
-            mensajeDescodificado = mensajeDescodificado.replace('enter', 'e');  
-        } else if (mensajeDescodificado.includes('imes') == true){
-            mensajeDescodificado = mensajeDescodificado.replace('imes', 'i');  
-        } else if (mensajeDescodificado.includes('ober') == true){
-            mensajeDescodificado = mensajeDescodificado.replace('ober', 'o');   
-        } else if (mensajeDescodificado.includes('ufat') == true){
-            mensajeDescodificado = mensajeDescodificado.replace('ufat', 'u');  
-        } else {
-            micondicional = false;
-        }        
-    }
-    while (micondicional == true);
+    if (verificarMensaje(mensaje) === true) {        
 
-    console.log('mensaje final: ' + mensajeDescodificado);
-    formatoMensaje();
-    mostrarTextAreaCodificado(mensajeDescodificado);
+        document.querySelector(".mensaje-pequeno").style.color = 'red'; 
     
+    } else {
+        document.querySelector(".mensaje-pequeno").style.color = 'black';  
+        var micondicional = true;
+        var mensajeDescodificado = mensaje;
+
+        do {
+            if (mensajeDescodificado.includes('ai') == true){
+                mensajeDescodificado = mensajeDescodificado.replace('ai', 'a');                     
+            } else if (mensajeDescodificado.includes('enter') == true){
+                mensajeDescodificado = mensajeDescodificado.replace('enter', 'e');  
+            } else if (mensajeDescodificado.includes('imes') == true){
+                mensajeDescodificado = mensajeDescodificado.replace('imes', 'i');  
+            } else if (mensajeDescodificado.includes('ober') == true){
+                mensajeDescodificado = mensajeDescodificado.replace('ober', 'o');   
+            } else if (mensajeDescodificado.includes('ufat') == true){
+                mensajeDescodificado = mensajeDescodificado.replace('ufat', 'u');  
+            } else {
+                micondicional = false;
+            }        
+        }
+        while (micondicional == true);
+
+        console.log('mensaje final: ' + mensajeDescodificado);
+        formatoMensaje();
+        mostrarTextAreaCodificado(mensajeDescodificado);
+
+    }
 }
 
 function formatoMensaje() {
@@ -127,3 +123,8 @@ function copiarTexto(){
     textarea.setSelectionRange(0, 99999);
     document.execCommand('copy');
 }
+
+function verificarMensaje(str) {
+    return /[A-Z0-9á-úÁ-Ú]/.test(str);
+  }
+  
