@@ -17,7 +17,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 82vh;
 
     justify-content: space-around;
     margin: 20px;        
@@ -27,7 +27,7 @@ header {
     display: flex;
     flex-direction: column;    
     width: 70%;
-    height: 75%;    
+    height: 85%;    
 }
 
 #messageInput{  /*EL INPUT*/
@@ -77,7 +77,7 @@ header {
     width: 30%;
     height: 100%;    
     border-radius: 15px;
-    
+        
 }
 
 #boton-encriptar:hover, #boton-desencriptar:hover, #boton-copiar:hover {
@@ -121,7 +121,7 @@ header {
     align-items: center;
 
     width: 30%; 
-    height: 75%; 
+    height: 85%; 
     border-radius: 25px;        
 }
 
@@ -163,12 +163,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
     background-color: rgb(44, 106, 183);
     color: #fff;    
     font-style: italic;         
-    /*width: 100%;    
-    left: 0; bottom: 0; 
-    z-index: -100; */
+    width: 100%;    
+    left: 0; 
+    bottom: 0; 
+    
 }
 
 .footer-text {
@@ -217,7 +219,8 @@ ul {
         display: flex;
         flex-grow: 0;        
         width: 100%;
-        height: 55%;        
+        height: 55%;    
+        gap: 1em;    
     }
 
     #messageInput {
